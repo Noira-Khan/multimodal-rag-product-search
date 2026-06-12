@@ -1,0 +1,28 @@
+# Virtual Environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment Variables
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Vector Database
+vector_store/*.faiss
+vector_store/*.pkl
+
+.venv/
+__pycache__/
+vector_store/
+data/archive/images/
+
+.venv/
+__pycache__/
+vector_store/
+
+data/archive/images/
+data/archive/myntradataset/
