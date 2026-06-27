@@ -1,7 +1,7 @@
 
 numpy
 pandas
-csv
-json
-os
+#csv built in
+#json built in
+#os built in
 

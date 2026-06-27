@@ -18,11 +18,11 @@ vector_store/*.pkl
 .venv/
 __pycache__/
 vector_store/
-data/archive/images/
+data/images/
 
 .venv/
 __pycache__/
 vector_store/
 
-data/archive/images/
-data/archive/myntradataset/
+data/images/
+data/myntradataset/
