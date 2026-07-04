@@ -1,0 +1,317 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+html,
+body,
+[class*="css"]{
+
+    font-family:Inter,sans-serif;
+
+}
+
+/* ===========================
+   MAIN APP
+=========================== */
+
+.block-container{
+
+    padding-top:2rem;
+    padding-left:3rem;
+    padding-right:3rem;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    background:linear-gradient(135deg,#FF3F6C,#7C3AED);
+
+    border-radius:22px;
+
+    padding:45px;
+
+    color:white;
+
+    box-shadow:0px 15px 35px rgba(0,0,0,.18);
+
+}
+
+/* ===========================
+   CATEGORY
+=========================== */
+
+.category-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0px 8px 18px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0px 16px 30px rgba(0,0,0,.15);
+
+}
+
+/* ===========================
+   KPI
+=========================== */
+
+div[data-testid="metric-container"]{
+
+    border-radius:18px;
+
+    background:white;
+
+    padding:18px;
+
+    box-shadow:0px 8px 18px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.stButton>button{
+
+    background:#FF3F6C;
+
+    color:white;
+
+    border-radius:12px;
+
+    border:none;
+
+    height:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.stButton>button:hover{
+
+    background:#E91E63;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+.stTextInput input{
+
+    border-radius:15px;
+
+    border:1px solid #DDD;
+
+    padding:12px;
+
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+[data-testid="stSidebar"]{
+
+    background:#FAFAFA;
+
+}
+
+[data-testid="stSidebar"] h1{
+
+    color:#FF3F6C;
+
+}
+
+[data-testid="stSidebar"]{
+
+    border-right:1px solid #ECECEC;
+
+}
+
+/* ===========================
+   INFO BOX
+=========================== */
+
+div.stAlert{
+
+    border-radius:15px;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:gray;
+
+}
+
+/* ===========================
+   HOVER ANIMATION
+=========================== */
+
+div[data-testid="metric-container"]:hover{
+
+    transform:translateY(-5px);
+
+    transition:.3s;
+
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+img{
+
+    border-radius:15px;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#CCCCCC;
+
+    border-radius:20px;
+
+}
+
+/* ===========================
+   TITLES
+=========================== */
+
+h1{
+
+    font-weight:800;
+
+}
+
+h2{
+
+    font-weight:700;
+
+}
+
+h3{
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   DIVIDER
+=========================== */
+
+hr{
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.block-container{
+
+padding-left:1rem;
+
+padding-right:1rem;
+
+}
+
+.hero{
+
+padding:30px;
+
+}
+
+}
+
+
+
+
+
+
+/* =====================================
+   Hide Streamlit Default Navigation
+===================================== */
+
+[data-testid="stSidebarNav"]{
+    display:none !important;
+}
+
+/* Remove blank gap above custom sidebar */
+
+[data-testid="stSidebarNavSeparator"]{
+    display:none !important;
+}
+
+/* Sidebar styling */
+
+[data-testid="stSidebar"]{
+    background:#FAFAFA;
+    border-right:1px solid #ECECEC;
+}
+
+/* Sidebar buttons */
+
+[data-testid="stSidebar"] .stButton>button{
+    width:100%;
+    text-align:left;
+    background:transparent;
+    color:#262730;
+    border:none;
+    border-radius:10px;
+    margin-bottom:6px;
+    font-weight:500;
+}
+
+[data-testid="stSidebar"] .stButton>button:hover{
+    background:#F2F2F2;
+    color:#FF3F6C;
+}

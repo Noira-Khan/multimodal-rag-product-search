@@ -2,14 +2,42 @@
 
 ## 1. Project Overview
 
-Multimodal RAG Product Search is an AI-powered Visual Search Engine that combines Computer Vision, Retrieval-Augmented Generation (RAG), Vector Search, and Large Language Models (LLMs) to help users discover visually similar products from an e-commerce catalog.
+# Multimodal RAG Product Search
 
-Instead of searching using keywords, users can upload a product image and retrieve similar products along with AI-generated explanations and source citations.
+An AI-powered Visual Product Search Engine that enables users to discover visually similar products by uploading an image instead of typing keywords.
+
+The application combines OpenCLIP image embeddings, FAISS vector search, Retrieval-Augmented Generation (RAG), and Large Language Models (LLMs) to deliver accurate, explainable, and grounded product recommendations.
+
+Unlike traditional keyword search, the system understands the visual content of an image, retrieves semantically similar products from an e-commerce catalog, enriches results using structured product metadata, and generates AI-powered explanations backed by retrieved evidence.
+
+The project demonstrates the end-to-end implementation of modern AI search architecture, including image embeddings, vector databases, metadata retrieval, RAG pipelines, similarity ranking, and hallucination mitigation.
+
 
 
 ## 2. Business Problem
 
 Traditional e-commerce search engines depend heavily on keyword matching.
+
+| Business Challenge                          | AI Solution                                   |
+| ----------------------------------------------- | --------------------------------------------- |
+| Users don't know product names                  | Search using images                           |
+| Keyword search misses visually similar products | OpenCLIP embeddings + FAISS similarity search |
+| Poor product discovery                          | AI-powered recommendations                    |
+| Low user engagement                             | Explainable results with LLM                  |
+| Hallucinated recommendations                    | Retrieval-Augmented Generation (RAG)          |
+
+## Key Features
+
+- Image-based product search
+- OpenCLIP visual embeddings
+- FAISS vector similarity search
+- Metadata-aware retrieval
+- Retrieval-Augmented Generation (RAG)
+- AI-generated product explanations
+- Source-backed recommendations
+- Hallucination reduction using grounded context
+- Scalable vector search architecture
+- Streamlit frontend + FastAPI backend
 
 ### Challenges
 
