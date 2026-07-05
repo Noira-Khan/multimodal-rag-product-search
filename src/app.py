@@ -48,7 +48,7 @@ product_search = st.Page(
 )
 
 ai_assistant = st.Page(
-    "pages/ai_assistance.py",
+    "pages/AI_assistance.py",
     title="AI Assistant",
     icon="🤖",
 )
