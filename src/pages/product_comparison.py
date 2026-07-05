@@ -84,7 +84,7 @@ product_names = sorted(
 # Product Selection
 # ==========================================================
 
-import difflib
+
 
 left, right = st.columns(2)
 
