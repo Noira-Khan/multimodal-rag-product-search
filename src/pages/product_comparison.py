@@ -30,9 +30,9 @@ Part 4
 """
 
 import streamlit as st
-
+import difflib
 from recommendation_engine import RecommendationEngine
-
+from analytics import Analytics
 # ==========================================================
 # Page Configuration
 # ==========================================================
@@ -60,7 +60,7 @@ def load_engine():
 
 
 engine = load_engine()
-
+analytics = Analytics()
 # ==========================================================
 # Session State
 # ==========================================================
@@ -84,37 +84,73 @@ product_names = sorted(
 # Product Selection
 # ==========================================================
 
+import difflib
+
 left, right = st.columns(2)
+
+# -------------------------
+# PRODUCT A
+# -------------------------
 
 with left:
 
-    product_a = st.selectbox(
+    st.subheader("🛍 Product A")
 
-        "Product A",
-
-        product_names,
-
-        index=0
-
+    query_a = st.text_input(
+        "Search Product A",
+        placeholder="Type product name..."
     )
+
+    if query_a:
+
+        suggestions_a = difflib.get_close_matches(
+            query_a,
+            product_names,
+            n=20,
+            cutoff=0.1
+        )
+
+    else:
+
+        suggestions_a = product_names[:20]
+
+    product_a = st.selectbox(
+        "Matching Products",
+        suggestions_a,
+        key="product_a"
+    )
+
+# -------------------------
+# PRODUCT B
+# -------------------------
 
 with right:
 
-    product_b = st.selectbox(
+    st.subheader("🛍 Product B")
 
-        "Product B",
-
-        product_names,
-
-        index=1
-
-        if len(product_names) > 1
-
-        else 0
-
+    query_b = st.text_input(
+        "Search Product B",
+        placeholder="Type product name..."
     )
 
-st.divider()
+    if query_b:
+
+        suggestions_b = difflib.get_close_matches(
+            query_b,
+            product_names,
+            n=20,
+            cutoff=0.1
+        )
+
+    else:
+
+        suggestions_b = product_names[:20]
+
+    product_b = st.selectbox(
+        "Matching Products",
+        suggestions_b,
+        key="product_b"
+    )
 # ==========================================================
 # Compare Button
 # ==========================================================
@@ -169,25 +205,33 @@ if compare_button:
 
         else:
 
-            st.success(
+            analytics.log_comparison(
 
-                "Comparison completed."
+                product_a,
 
-            )
+                product_b
 
-            st.session_state.comparison_history.append(
+                )
 
-                {
+    st.success(
 
-                    "product_a": product_a,
+        "Comparison completed."
 
-                    "product_b": product_b
+    )
 
-                }
+    st.session_state.comparison_history.append(
 
-            )
+        {
 
-            st.subheader(
+            "product_a": product_a,
+
+            "product_b": product_b
+
+        }
+
+    )
+
+    st.subheader(
 
                 "📊 Product Comparison"
 
