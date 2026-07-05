@@ -11,18 +11,18 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
+vector_store/*
 
 
-.venv/
-__pycache__/
-vector_store/
-data/images/
 
 .venv/
 __pycache__/
 
 
-data/images/
+.venv/
+__pycache__/
+
+
 data/myntradataset/
 
 .streamlit/
