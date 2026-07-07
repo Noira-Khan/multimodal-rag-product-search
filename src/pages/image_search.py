@@ -608,7 +608,11 @@ st.divider()
 
 st.subheader("🧠 AI Product Insights")
 
-description = result["description"]
+if st.session_state.image_analysis is not None:
+    result = st.session_state.image_analysis
+    description = result["description"]
+else:
+    st.stop()
 
 try:
 
@@ -638,42 +642,43 @@ except Exception:
 
     st.info("AI Insights unavailable.")
 
+
 # ---------------------------------------------------------
 # SEARCH SUMMARY
 # ---------------------------------------------------------
 
-st.divider()
+if st.session_state.image_pipeline is not None:
 
-st.subheader("📊 Search Summary")
+    pipeline = st.session_state.image_pipeline
 
-c1, c2, c3 = st.columns(3)
+    st.divider()
 
-with c1:
+    st.subheader("📊 Search Summary")
 
-    st.metric(
-        "Products Retrieved",
-        len(pipeline["results"])
-    )
+    c1, c2, c3 = st.columns(3)
 
-with c2:
+    with c1:
+        st.metric(
+            "Products Retrieved",
+            len(pipeline["results"])
+        )
 
-    avg_similarity = (
-        sum(p["similarity"] for p in pipeline["results"])
-        / len(pipeline["results"])
-    )
+    with c2:
+        avg_similarity = (
+            sum(p["similarity"] for p in pipeline["results"])
+            / len(pipeline["results"])
+        )
 
-    st.metric(
-        "Average Similarity",
-        f"{avg_similarity:.2f}"
-    )
+        st.metric(
+            "Average Similarity",
+            f"{avg_similarity:.2f}"
+        )
 
-with c3:
-
-    st.metric(
-        "Search Method",
-        "Gemini + FAISS"
-    )
-
+    with c3:
+        st.metric(
+            "Search Method",
+            "Gemini + FAISS"
+        )
 # ---------------------------------------------------------
 # AI PIPELINE
 # ---------------------------------------------------------
