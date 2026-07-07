@@ -46,7 +46,11 @@ product_search = st.Page(
     title="Product Search",
     icon="🔍",
 )
-
+image_search = st.Page(
+    "pages/image_search.py",
+    title="Image Search",
+    icon="📷",
+)
 ai_assistant = st.Page(
     "pages/AI_assistance.py",
     title="AI Assistant",
@@ -87,6 +91,7 @@ navigation = st.navigation(
     [
         home,
         product_search,
+        image_search,
         ai_assistant,
         recommendations,
         comparison,

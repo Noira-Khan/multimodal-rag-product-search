@@ -58,15 +58,25 @@ def show_navbar():
 
         c1, c2, c3, c4, c5 = st.columns(5)
 
-        c1.button("👕 Men", use_container_width=True)
+        if c1.button("👕 Men", use_container_width=True):
+          st.session_state["search_query"] = "Men's fashion"
+          st.switch_page("pages/product_search.py")
 
-        c2.button("👗 Women", use_container_width=True)
+        if c2.button("👗 Women", use_container_width=True):
+            st.session_state["search_query"] = "Women's fashion"
+            st.switch_page("pages/product_search.py")
 
-        c3.button("👦 Kids", use_container_width=True)
+        if c3.button("👦 Kids", use_container_width=True):
+            st.session_state["search_query"] = "Kids' fashion"
+            st.switch_page("pages/product_search.py")
 
-        c4.button("💄 Beauty", use_container_width=True)
+        if c4.button("💄 Beauty", use_container_width=True):
+           st.session_state["search_query"] = "Beauty products"
+           st.switch_page("pages/product_search.py")
 
-        c5.button("🎒 Accessories", use_container_width=True)
+        if c5.button("🎒 Accessories", use_container_width=True):
+            st.session_state["search_query"] = "Fashion accessories"
+            st.switch_page("pages/product_search.py")
 
     st.write("")
 

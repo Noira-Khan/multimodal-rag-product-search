@@ -28,7 +28,7 @@ from pathlib import Path
 
 from components.sidebar import show_sidebar
 from rag_engine import RAGEngine
-from analytics import Analytics
+from analytics_service import Analytics
 import time
 st.set_page_config(
     page_title="AI Product Search",
@@ -88,6 +88,7 @@ Examples
 query = st.text_input(
 
     "Search",
+    value=st.session_state.get("search_query", ""),
 
     placeholder="Search naturally..."
 

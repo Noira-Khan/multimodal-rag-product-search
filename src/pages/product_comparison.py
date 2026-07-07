@@ -33,7 +33,7 @@ import difflib
 
 import streamlit as st
 
-from analytics import Analytics
+from analytics_service import Analytics
 from recommendation_engine import RecommendationEngine
 
 # ==========================================================

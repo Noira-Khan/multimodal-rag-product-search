@@ -2,11 +2,9 @@ import streamlit as st
 
 
 def show_hero():
-
     left, right = st.columns([2, 1], gap="large")
 
     with left:
-
         st.markdown("### 🛍️ AI Fashion Discovery")
 
         st.title("Find Your Perfect Style with AI")
@@ -38,37 +36,23 @@ products, and recommends outfits instantly.
         b1, b2 = st.columns(2)
 
         with b1:
-            st.button(
+            if st.button(
                 "🛒 Start Shopping",
-                use_container_width=True
-            )
+                width="stretch"
+            ):
+                st.switch_page("pages/product_search.py")
 
         with b2:
-            st.button(
+            if st.button(
                 "📷 Image Search",
-                use_container_width=True
-            )
+                width="stretch"
+            ):
+                st.switch_page("pages/image_search.py")
 
     with right:
-
-        st.metric(
-            "Products",
-            "44K+"
-        )
-
-        st.metric(
-            "Categories",
-            "7"
-        )
-
-        st.metric(
-            "Article Types",
-            "143"
-        )
-
-        st.metric(
-            "Search Modes",
-            "3"
-        )
+        st.metric("Products", "44K+")
+        st.metric("Categories", "7")
+        st.metric("Article Types", "143")
+        st.metric("Search Modes", "3")
 
     st.divider()
